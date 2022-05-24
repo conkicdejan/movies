@@ -14,6 +14,7 @@
 
     </head>
     <body class="antialiased">
+        @include('includes.navbar')
         @yield('content')
     </body>
 </html>
