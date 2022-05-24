@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
 use App\Models\Comment;
+use App\Models\Movie;
 
 class CommentController extends Controller
 {
@@ -34,9 +35,11 @@ class CommentController extends Controller
      * @param  \App\Http\Requests\StoreCommentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCommentRequest $request)
+    public function store(Movie $movie, StoreCommentRequest $request)
     {
-        //
+        $data = $request->validated();
+        $comment = $movie->comments()->create($data);
+        return back();
     }
 
     /**

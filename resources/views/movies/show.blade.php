@@ -22,4 +22,20 @@
             <hr>
         @endforeach
     </div>
+
+    <div class='container'>
+        <form method='post' action="/movies/{{ $movie->id }}/comments/create">
+            @csrf
+
+            <div class="form-group">
+                <label for="content">Add comment:</label>
+                <textarea class="form-control" name="content" id="content" rows="2"></textarea>
+                @error('content')
+                <span>{{ $message }}</span>
+                @enderror
+            </div>
+            <br/>
+            <button class='btn btn-primary' type="submit">Add comment</button>
+        </form>
+    </div>
 @endsection
