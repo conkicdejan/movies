@@ -9,5 +9,8 @@ class Comment extends Model
 {
     use HasFactory;
 
-    
+    public function movie()
+    {
+        return $this->belongsTo(Movie::class);
+    }
 }
