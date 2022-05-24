@@ -37,7 +37,8 @@ class MovieController extends Controller
      */
     public function store(StoreMovieRequest $request)
     {
-        //
+        $movie = Movie::create($request->validated());
+        return redirect('/movies/' . $movie->id);
     }
 
     /**

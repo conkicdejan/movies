@@ -13,7 +13,7 @@ class StoreMovieRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class StoreMovieRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'string|required',
+            'genre' => 'string|required',
+            'director' => 'string|nullable',
+            'year' => 'integer|nullable|min:1900|max:' . now()->year,
+            'storyline' => 'string|nullable|max:1000',
         ];
     }
 }
