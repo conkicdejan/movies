@@ -17,8 +17,8 @@ class MovieController extends Controller
     {
         $movies = Movie::all();
         if($genre){
+            $movies = Movie::where('genre', $genre)->get();
         }
-        $movies = Movie::where('genre', $genre)->get();
         return view('movies.index', compact('movies'));
     }
 

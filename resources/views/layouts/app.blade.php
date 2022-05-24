@@ -15,6 +15,11 @@
     </head>
     <body class="antialiased">
         @include('includes.navbar')
-        @yield('content')
+        <div class='d-flex'>
+            @include('includes.sidebar')
+            <div>
+                @yield('content')
+            </div>
+        </div>
     </body>
 </html>
