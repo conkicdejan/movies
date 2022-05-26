@@ -14,8 +14,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function __construct() {
-        $moviesLastFive = Movie::latest()->take(5)->get();
-        View::share('movieLastFive', $moviesLastFive);
+    public function __construct()
+    {
     }
 }

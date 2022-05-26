@@ -7,7 +7,7 @@
 @section('content')
 <div class='container'>
     <h2>{{ $movie->title }}</h2>
-    <p class='badge bg-primary'><a href="/movies/genre/{{ $movie->genre }}">Genre: {{ $movie->genre }}</a></p>
+    <a class='badge bg-primary' href="/movies/genre/{{ $movie->genre }}">Genre: {{ $movie->genre }}</a>
     <p class='badge bg-primary'>Director: {{ $movie->director }}</p>
     <p class='badge bg-primary'>Year: {{ $movie->year }}</p>
     <p>{{ $movie->storyline }}</p>

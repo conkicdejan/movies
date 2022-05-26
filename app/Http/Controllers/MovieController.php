@@ -13,12 +13,10 @@ class MovieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($genre = false)
+    public function index()
     {
         $movies = Movie::all();
-        if($genre){
-            $movies = Movie::where('genre', $genre)->get();
-        }
+
         return view('movies.index', compact('movies'));
     }
 
